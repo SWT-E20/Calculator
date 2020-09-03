@@ -42,7 +42,7 @@ namespace Calculator.Test.Unit
         [TestCase(5, 13, 65)]
         [TestCase(-5, 5, -25)]
         [TestCase(5.4, 13.8, 74.52)]
-        [TestCase(7, 0, 0)]
+        [TestCase(8, 0, 0)]
         public void Multiply_TwoNumbers_ReturnCorrectResult(double firstNumber, double secondNumber, double result)
         {
             _result = uut.Multiply(firstNumber, secondNumber);
