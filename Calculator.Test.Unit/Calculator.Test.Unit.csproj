@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="D:\Visual Studios Projekter\Semester4_2\SWT\Lecture1_1\Calculator\Calculator\Calculator.Test.Unit\lib\nunit.framework.dll"/>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="NUnit" Version="3.12.0" />
   </ItemGroup>
