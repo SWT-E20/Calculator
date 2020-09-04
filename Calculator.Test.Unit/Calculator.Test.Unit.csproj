@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="..\Calculator\Calculator.Test.Unit\lib\nunit.framework.dll"/>
+    <Reference Include="lib\nunit.framework.dll"/>
   </ItemGroup>
 
   <ItemGroup>
