@@ -17,7 +17,7 @@ namespace Calculator.Test.Unit
             _result = 0;
         }
 
-        [TestCase(5,13,18)]
+        [TestCase(6,13,19)]
         [TestCase(-5,5,0)]
         [TestCase(5.4, 13.8,19.2)]
         [TestCase(7, 0, 7)]
@@ -26,6 +26,9 @@ namespace Calculator.Test.Unit
             _result = uut.Add(firstNumber, secondNumber);
 
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
+            
+            // alternate way:
+            Assert.AreEqual(_result, result, 0.005);
         }
 
         [TestCase(5, 13, -8)]

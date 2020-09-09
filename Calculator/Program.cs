@@ -21,6 +21,9 @@ namespace Calculator
             result = calc.Multiply(3, 5);
             Console.WriteLine(result);
 
+            result = calc.Multiply(-2, -2);
+            Console.WriteLine(result);
+
             result = calc.Power(3, 5);
             Console.WriteLine(result);
 
