@@ -65,5 +65,14 @@ namespace Calculator.Test.Unit
 
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
         }
+
+        [TestCase(10, 5, 2)]
+        [TestCase(1, 0, 1)]
+        public void Divide_TwoNumbers_ReturnCorrectResult(double firstNumber, double secondNumber, double result)
+        {
+            _result = uut.Divide(firstNumber, secondNumber);
+
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
     }
 }
