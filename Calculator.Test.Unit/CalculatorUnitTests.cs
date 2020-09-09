@@ -21,6 +21,7 @@ namespace Calculator.Test.Unit
         [TestCase(-5,5,0)]
         [TestCase(5.4, 13.8,19.2)]
         [TestCase(7, 0, 7)]
+        [TestCase(4, 1.7, 5.7)]
         public void Add_TwoNumbers_ReturnCorrectResult(double firstNumber, double secondNumber, double result)
         {
             _result = uut.Add(firstNumber, secondNumber);
