@@ -78,20 +78,64 @@ namespace Calculator.Test.Unit
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
         }
 
-        [TestCase(10, 5, 10, 2, 2, 625)]
-        [TestCase(10, 5, 100, 100, 5, 3125)]
-        [TestCase(2.5, 3.3, 1.6, 8, -2, 39.0625)]
-        [TestCase(2, 1, 0, 8, 2, 0)]
-        [TestCase(3, -3, 2, 4, 2, 9)]
-        public void Accumulate_MultipleOperations_ReturnCorrectResult(double addNum, double subNum, double mulNum, double divNum, double powNum, double result)
+        [TestCase(10, 5, 2, 1)]
+        [TestCase(-10, 5, -2, 1)]
+        [TestCase(-10, -2, -2.5, -2)]
+        [TestCase(1, 2, 2, 0.25)]
+        public void Divide_OneNumberAndAccumulator_ReturnCorrectResult(double firstNumber, double secondNumber, double thirdNumber, double result)
         {
-            uut.Add(addNum);
-            uut.Subtract(subNum);
-            uut.Multiply(mulNum);
-            uut.Divide(divNum);
-            _result = uut.Power(powNum);
+            uut.Divide(firstNumber, secondNumber);
+            _result = uut.Divide(thirdNumber);
 
-            Assert.That(_result, Is.EqualTo(result).Within(0.001));
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase(10, 5, 2, 17)]
+        [TestCase(-10, 5, -2, -7)]
+        [TestCase(-10, -2, -2.5, -14.5)]
+        [TestCase(1, 2, 2, 5)]
+        public void Add_OneNumberAndAccumulator_ReturnCorrectResult(double firstNumber, double secondNumber, double thirdNumber, double result)
+        {
+            uut.Add(firstNumber, secondNumber);
+            _result = uut.Add(thirdNumber);
+
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase(10, 5, 2, 3)]
+        [TestCase(-10, 5, -2, -13)]
+        [TestCase(-10, -2, -2.5, -5.5)]
+        [TestCase(1, 2, 2, -3)]
+        public void Subtract_OneNumberAndAccumulator_ReturnCorrectResult(double firstNumber, double secondNumber, double thirdNumber, double result)
+        {
+            uut.Subtract(firstNumber, secondNumber);
+            _result = uut.Subtract(thirdNumber);
+
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase(10, 5, 2, 100)]
+        [TestCase(-10, 5, -2, 100)]
+        [TestCase(-10, -2, -2.5, -50)]
+        [TestCase(1, 2, 2, 4)]
+        public void Multiply_OneNumberAndAccumulator_ReturnCorrectResult(double firstNumber, double secondNumber, double thirdNumber, double result)
+        {
+            uut.Multiply(firstNumber, secondNumber);
+            _result = uut.Multiply(thirdNumber);
+
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase(10, 5, 2, 10000000000)]
+        [TestCase(-10, 5, -2, 0.0000000001)]
+        [TestCase(-10, -2, -2.5, 100000)]
+        [TestCase(1, 2, 2, 1)]
+        public void Power_OneNumberAndAccumulator_ReturnCorrectResult(double firstNumber, double secondNumber, double thirdNumber, double result)
+        {
+            uut.Power(firstNumber, secondNumber);
+            _result = uut.Power(thirdNumber);
+
+            Assert.That(_result, Is.EqualTo(result).Within(0.005));
         }
 
         [TestCase()]
