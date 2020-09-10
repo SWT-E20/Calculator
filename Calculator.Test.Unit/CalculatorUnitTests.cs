@@ -33,6 +33,7 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(5, 13, -8)]
+        [TestCase(10, 8, 2)]
         [TestCase(-5, 5, -10)]
         [TestCase(5.4, 13.8, -8.4)]
         [TestCase(7, 0, 7)]
