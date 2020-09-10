@@ -27,7 +27,7 @@ namespace Calculator.Test.Unit
             _result = uut.Add(firstNumber, secondNumber);
 
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
-            
+
             // alternate way:
             Assert.AreEqual(_result, result, 0.005);
         }
