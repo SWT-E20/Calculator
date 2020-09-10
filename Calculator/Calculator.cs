@@ -15,22 +15,26 @@ namespace Calculator
 
         public double Add(double a, double b)
         {
-            return a + b;
+            Accumulator = a + b;
+            return Accumulator;
         }
 
         public double Subtract(double a, double b)
         {
-            return a - b;
+            Accumulator = a - b;
+            return Accumulator;
         }
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            Accumulator = a * b;
+            return Accumulator;
         }
 
         public double Power(double x, double exp)
         {
-            return Math.Pow(x, exp);
+            Accumulator = Math.Pow(x, exp);
+            return Accumulator;
         }
 
         public double Divide(double dividend, double divisor)
@@ -41,24 +45,25 @@ namespace Calculator
                 Console.WriteLine("Divide by zero: changed divisor to 1");
             }
 
-            return dividend / divisor;
+            Accumulator = dividend / divisor;
+            return Accumulator;
         }
 
         public double Add(double addend)
         {
-            Accumulator = addend + Accumulator;
+            Accumulator += addend;
             return Accumulator;
         }
 
         public double Subtract(double subtractor)
         {
-            Accumulator = Accumulator - subtractor;
+            Accumulator -= subtractor;
             return Accumulator;
         }
 
         public double Multiply(double multiplier)
         {
-            Accumulator = multiplier * Accumulator;
+            Accumulator *= multiplier;
             return Accumulator;
         }
 
@@ -69,7 +74,7 @@ namespace Calculator
                 divisor++;
                 Console.WriteLine("Divide by zero: changed divisor to 1");
             }
-            Accumulator = Accumulator / divisor;
+            Accumulator /= divisor;
             return Accumulator;
         }
 

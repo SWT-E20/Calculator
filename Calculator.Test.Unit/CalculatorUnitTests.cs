@@ -97,7 +97,7 @@ namespace Calculator.Test.Unit
         [TestCase()]
         public void Clear_ClearsAccumulator_AccumulatorIsCleared()
         {
-            uut.Add(5);
+            uut.Add(2, 3);
             _result = uut.Add(5);
             Assert.That(_result, Is.EqualTo(10));
 
