@@ -81,6 +81,7 @@ namespace Calculator.Test.Unit
         [TestCase(10, 5, 100, 100, 5, 3125)]
         [TestCase(2.5, 3.3, 1.6, 8, -2, 39.0625)]
         [TestCase(2, 1, 0, 8, 2, 0)]
+        [TestCase(3, -3, 2, 4, 2, 9)]
         public void Accumulate_MultipleOperations_ReturnCorrectResult(double addNum, double subNum, double mulNum, double divNum, double powNum, double result)
         {
             uut.Add(addNum);
