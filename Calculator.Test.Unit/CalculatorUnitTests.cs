@@ -70,7 +70,6 @@ namespace Calculator.Test.Unit
         [TestCase(10, 5, 2)]
         [TestCase(-10, 5, -2)]
         [TestCase(-10, -2, 5)]
-        //[TestCase(1, 0, 1)]
         public void Divide_TwoNumbers_ReturnCorrectResult(double firstNumber, double secondNumber, double result)
         {
             _result = uut.Divide(firstNumber, secondNumber);
@@ -112,10 +111,7 @@ namespace Calculator.Test.Unit
                 _result = uut.Divide(0);
                 Assert.Fail();
             }
-            catch (DivideByZeroException)
-            {
-
-            }
+            catch (DivideByZeroException){}
         }
 
         [TestCase(10, 5, 2, 17)]

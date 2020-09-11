@@ -41,7 +41,7 @@ namespace Calculator
         {
             if (divisor == 0)
             {
-                throw new DivideByZeroException();
+                throw new DivideByZeroException("Error: Division by zero!");
             }
 
             Accumulator = dividend / divisor;
@@ -70,7 +70,7 @@ namespace Calculator
         {
             if (divisor == 0)
             {
-                throw new DivideByZeroException();
+                throw new DivideByZeroException("Error: Division by zero!");
             }
             Accumulator /= divisor;
             return Accumulator;
