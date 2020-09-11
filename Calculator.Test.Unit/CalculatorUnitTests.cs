@@ -70,12 +70,25 @@ namespace Calculator.Test.Unit
         [TestCase(10, 5, 2)]
         [TestCase(-10, 5, -2)]
         [TestCase(-10, -2, 5)]
-        [TestCase(1, 0, 1)]
+        //[TestCase(1, 0, 1)]
         public void Divide_TwoNumbers_ReturnCorrectResult(double firstNumber, double secondNumber, double result)
         {
             _result = uut.Divide(firstNumber, secondNumber);
 
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase(1, 0)]
+        [TestCase(10,0)]
+        [TestCase(-19,0)]
+        public void Divide_TwoNumbers_ThrowException(double firstNumber, double secondNumber)
+        {
+            try
+            {
+                _result = uut.Divide(firstNumber, secondNumber);
+                Assert.Fail(); // if this line is reached, it means no exception was thrown = fail
+            }
+            catch (DivideByZeroException){}
         }
 
         [TestCase(10, 5, 2, 1)]
@@ -88,6 +101,21 @@ namespace Calculator.Test.Unit
             _result = uut.Divide(thirdNumber);
 
             Assert.That(_result, Is.EqualTo(result).Within(0.005));
+        }
+
+        [TestCase()]
+        public void Divide_OneNumberAndAccumulator_ThrowException()
+        {
+            try
+            {
+                uut.Add(10, 10);
+                _result = uut.Divide(0);
+                Assert.Fail();
+            }
+            catch (DivideByZeroException)
+            {
+
+            }
         }
 
         [TestCase(10, 5, 2, 17)]

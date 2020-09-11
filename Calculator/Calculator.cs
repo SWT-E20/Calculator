@@ -41,8 +41,7 @@ namespace Calculator
         {
             if (divisor == 0)
             {
-                divisor++;
-                Console.WriteLine("Divide by zero: changed divisor to 1");
+                throw new DivideByZeroException();
             }
 
             Accumulator = dividend / divisor;
@@ -71,8 +70,7 @@ namespace Calculator
         {
             if (divisor == 0)
             {
-                divisor++;
-                Console.WriteLine("Divide by zero: changed divisor to 1");
+                throw new DivideByZeroException();
             }
             Accumulator /= divisor;
             return Accumulator;
