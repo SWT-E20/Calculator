@@ -6,6 +6,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            //test
             double result = 0;
             var calc = new Calculator();
 
